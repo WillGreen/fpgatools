@@ -76,7 +76,11 @@ If you're having issues:
 
 The palette is of the form `0xRRGGBB` (24-bit) or `0xRGB` (12-bit). Red is stored in the most-significant byte or nibble, then green, then blue.
 
-For example, for a 12-bit palette value the following Verilog is correct:
+You can use the concat operator to separate the components:
+
+    {red, green, blue} = palette;
+
+To separate a 12-bit palette one colour at a time:
 
     assign red = palette[11:8];
     assign green = palette[7:4];
